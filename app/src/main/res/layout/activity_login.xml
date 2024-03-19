@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Linear Layout = untuk membuat layout yang bersumbu x dan y-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:src="@drawable/upinipin" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp">
+        <!--Text View = untuk membuat tampilan text-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:textSize="20sp"
+            android:text="Nama" />
+        <!--Properti match_parent digunakan untuk memberi tahu tampilan
+        agar menempati seluruh ruang yang tersedia dalam induknya.-->
+        <!--Properti wrap_content digunakan untuk memberi tahu tampilan
+        agar menyesuaikan ukurannya dengan konten atau isi di dalamnya-->
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/InputNama"
+            android:hint="Masukkan Nama" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp">
+        <!--Text View = untuk membuat tampilan text-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:textSize="20sp"
+            android:text="Password" />
+        <!--Properti match_parent digunakan untuk memberi tahu tampilan
+        agar menempati seluruh ruang yang tersedia dalam induknya.-->
+        <!--Properti wrap_content digunakan untuk memberi tahu tampilan
+        agar menyesuaikan ukurannya dengan konten atau isi di dalamnya-->
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/InputPass"
+            android:inputType="textPassword"
+            android:hint="Masukkan Password" />
+
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#4074DC">
+
+    </View>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbPass"
+        android:textSize="15sp"
+        android:text="Show Password"
+        android:layout_gravity="start">
+    </CheckBox>
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register Account ?"
+        android:textSize="15sp"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:textColor="#4074DC">
+
+    </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ButtonLogin"
+        android:layout_marginVertical="10dp"
+        android:text="Login" />
+
+
+</LinearLayout>
+

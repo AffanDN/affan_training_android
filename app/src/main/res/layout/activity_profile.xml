@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/ic_launcher_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/vComponentTopbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/component_topbar">
+    </include>
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/upinipin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:id="@+id/tvNama"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/ivProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvNama2"
+        android:text="Nama :" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:id="@+id/tvNama2"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/ivProfile"
+        app:layout_constraintStart_toStartOf="@id/tvNama"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Upin dan Ipin" />
+
+    <TextView
+        android:id="@+id/tvAlamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        app:layout_constraintTop_toBottomOf="@id/tvNama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvAlamat2"
+        android:textSize="20sp"
+        android:text="Alamat :"/>
+    <TextView
+        android:id="@+id/tvAlamat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        app:layout_constraintTop_toBottomOf="@id/tvNama2"
+        app:layout_constraintStart_toStartOf="@id/tvAlamat"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:text="Durian Runtuh"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvAlamat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:text="Logout">
+    </Button>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

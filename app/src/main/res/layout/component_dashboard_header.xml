@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:background="@drawable/gradient">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLogoBcas"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/bca_syariah"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSearchContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/ivLogoBcas"
+        app:layout_constraintEnd_toStartOf="@id/ivCall"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_search"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:background="@null"
+                android:hint="Cari Disini"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_wifi_calling_3_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cvSearchContainer"
+        app:layout_constraintBottom_toBottomOf="@id/cvSearchContainer"
+        android:id="@+id/ivCall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assalamualaikum, AFFAN DHARMAWAN NUSLI"
+        app:layout_constraintTop_toBottomOf="@id/cvSearchContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:textSize="12sp"
+        android:layout_marginStart="10dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

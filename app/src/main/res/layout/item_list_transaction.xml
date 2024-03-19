@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/TransferType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        tools:text="Pembayaran QR">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/TransferDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/TransferType"
+        app:layout_constraintStart_toStartOf="@id/TransferType"
+        tools:text="QRIS Tuan Rumah">
+
+    </TextView>
+    <TextView
+        android:id="@+id/TransferDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/TransferDestination"
+        app:layout_constraintStart_toStartOf="@id/TransferDestination"
+        tools:text="13/03/2024">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvStatusTransaction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/TransferType"
+        app:layout_constraintBottom_toBottomOf="@id/TransferDate"
+        tools:text="Sukses">
+
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAmount"
+        android:textColor="#5265E2"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvStatusTransaction"
+        app:layout_constraintBottom_toBottomOf="@id/TransferDate"
+        tools:text="Rp. 100.000">
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

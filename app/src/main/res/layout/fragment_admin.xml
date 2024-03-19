@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="Admin"
+        android:textSize="26sp"
+        android:gravity="fill"
+        android:paddingLeft="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/gradient" />
+
+    <TextView
+        android:id="@+id/tvInisialName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader"
+        android:text="AD"
+        android:padding="20dp"
+        android:textSize="25sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/circle_text"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tvInisialName"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"
+        android:text="AFFAN DHARMAWAN NUSLI"/>
+
+    <TextView
+        android:id="@+id/tvLayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Layanan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInisialName"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#79868B"/>
+<!--    Isi Layanan -->
+    <ImageView
+        android:id="@+id/ivDiamond"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/diamond_kode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLayanan"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvNameLayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kode Referral"
+        app:layout_constraintStart_toStartOf="@id/ivDiamond"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLayanan"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintStart_toEndOf="@id/tvNameLayanan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLayanan"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"/>
+
+    <View
+        android:id="@+id/vFirstLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNameLayanan"
+        android:layout_marginTop="20dp"
+        android:background="#A3B0B4">
+
+    </View>
+<!--    Layanan kedua-->
+
+    <ImageView
+        android:id="@+id/ivLocation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_location_on_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vFirstLine"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvNameLayanan2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lokasi Cabang"
+        app:layout_constraintStart_toStartOf="@id/ivLocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vFirstLine"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintStart_toEndOf="@id/tvNameLayanan2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vFirstLine"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"/>
+
+    <View
+        android:id="@+id/vSecondLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNameLayanan2"
+        android:layout_marginTop="20dp"
+        android:background="#A3B0B4">
+
+    </View>
+<!--    Administrasi-->
+    <TextView
+        android:id="@+id/tvAdministrasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Administrasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vSecondLine"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#79868B"/>
+
+    <ImageView
+        android:id="@+id/ivEmail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_email_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAdministrasi"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvNameAdministrasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubah Email"
+        app:layout_constraintStart_toStartOf="@id/ivEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAdministrasi"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintStart_toEndOf="@id/tvNameAdministrasi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAdministrasi"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"/>
+
+    <View
+        android:id="@+id/vThirdLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNameAdministrasi"
+        android:layout_marginTop="20dp"
+        android:background="#A3B0B4">
+
+    </View>
+<!--Administrasi Kedua-->
+    <ImageView
+        android:id="@+id/ivLock"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_lock_reset_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vThirdLine"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvNameAdministrasi2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubah Kode Akses"
+        app:layout_constraintStart_toStartOf="@id/ivLock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vThirdLine"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintStart_toEndOf="@id/tvNameAdministrasi2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vThirdLine"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"/>
+
+    <View
+        android:id="@+id/vFourthLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNameAdministrasi2"
+        android:layout_marginTop="20dp"
+        android:background="#A3B0B4">
+
+    </View>
+<!--    Administrasi ketiga-->
+    <ImageView
+        android:id="@+id/ivMpin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_sync_lock_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vFourthLine"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvNameAdministrasi3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubah Mpin"
+        app:layout_constraintStart_toStartOf="@id/ivMpin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vFourthLine"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintStart_toEndOf="@id/tvNameAdministrasi3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vFourthLine"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"/>
+
+    <View
+        android:id="@+id/vFiveLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNameAdministrasi3"
+        android:layout_marginTop="20dp"
+        android:background="#A3B0B4">
+
+    </View>
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
