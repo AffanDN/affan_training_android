@@ -3,19 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
-    <include
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/componentHeader"
-        layout="@layout/component_dashboard_header"/>
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/componentMenu"
-        layout="@layout/fragment_menu_dashboard"
-        app:layout_constraintTop_toBottomOf="@id/componentHeader"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/componentHeader"
+                layout="@layout/component_dashboard_header"/>
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:id="@+id/componentMenu"
+                layout="@layout/fragment_menu_dashboard" />
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/componentAccNumber"
+                layout="@layout/component_account_number"/>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
