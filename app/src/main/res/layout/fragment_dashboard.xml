@@ -32,6 +32,12 @@
                 android:id="@+id/componentAccNumber"
                 layout="@layout/component_account_number"/>
 
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/componentPromo"
+                layout="@layout/component_promotion"/>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

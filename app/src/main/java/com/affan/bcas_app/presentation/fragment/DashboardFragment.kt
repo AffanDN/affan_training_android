@@ -7,20 +7,26 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.affan.bcas_app.R
 import com.affan.bcas_app.adapter.AccountNumberAdapter
+import com.affan.bcas_app.adapter.PromotionAdapter
 import com.affan.bcas_app.base.BaseFragment
 import com.affan.bcas_app.databinding.FragmentDashboardBinding
 import com.affan.bcas_app.model.AccountNumberModel
 import com.affan.bcas_app.model.MenuDashboardModel
+import com.affan.bcas_app.model.PromotionModel
 import com.affan.bcas_app.presentation.fragment.adapter.DashboardMenuAdapter
+import com.affan.bcas_app.presentation.viewmodel.DashboardViewModel
 import com.affan.bcas_app.utils.HorizontalItemDecoration
 
 class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
 //    menambahkan isi variabelnya nanti sesuai dengan isi nya
+    private val viewModel: DashboardViewModel by viewModels()
     private lateinit var menuAdapter: DashboardMenuAdapter
     private lateinit var accountNumberAdapter: AccountNumberAdapter
+    private lateinit var promotionAdapter: PromotionAdapter
 
     private val horizontalItemDecoration by lazy {
         HorizontalItemDecoration(
@@ -35,13 +41,26 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
     }
 
     override fun setupView() {
-        setupViewMenu()
-        setupViewAccountNumber()
+//        setupViewMenu()
+//        setupViewAccountNumber()
+        setupViewPromotion()
 
+        viewModel.getHomeMenu()
+        viewModel.getAccNumber()
+        observeViewModel()
     }
 
-    private fun setupViewAccountNumber() {
-        accountNumberAdapter = AccountNumberAdapter(populateDataAccNumber())
+    private fun observeViewModel() {
+        viewModel.homeMenu.observe(viewLifecycleOwner) {
+            setupViewMenu(it)
+        }
+        viewModel.accNumber.observe(viewLifecycleOwner) {
+            setupViewAccountNumber(it)
+        }
+    }
+
+    private fun setupViewAccountNumber(data: List<AccountNumberModel>) {
+        accountNumberAdapter = AccountNumberAdapter(data)
         binding.componentAccNumber.rvAccountNumber.adapter = accountNumberAdapter
 
 //        Cara buat orientasinya horizontal
@@ -55,69 +74,45 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
         }
     }
 
-    private fun setupViewMenu() {
+    private fun setupViewMenu(data: List<MenuDashboardModel>) {
         menuAdapter = DashboardMenuAdapter(
-            menuData = populateDatamenu(),
+            menuData = data,
             context = binding.root.context
         )
 
         binding.componentMenu.gridMenu.adapter = menuAdapter
         binding.componentMenu.gridMenu.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _
-            -> Toast.makeText(binding.root.context, populateDatamenu()[position].menuName,
+            -> Toast.makeText(binding.root.context, data[position].menuName,
             Toast.LENGTH_SHORT).show()  }
     }
 
-    private fun populateDatamenu() : List<MenuDashboardModel> {
+    private fun setupViewPromotion() {
+        promotionAdapter = PromotionAdapter(populateDataPromo())
+        binding.componentPromo.rvPromo.adapter = promotionAdapter
+
+        binding.componentPromo.rvPromo.layoutManager =
+            LinearLayoutManager(binding.root.context,
+                LinearLayoutManager.HORIZONTAL, false)
+        binding.componentPromo.rvPromo.apply {
+            if (itemDecorationCount <= 0) {
+                addItemDecoration(horizontalItemDecoration)
+            }
+        }
+    }
+
+    private fun populateDataPromo() : List<PromotionModel>{
         return listOf(
-            MenuDashboardModel(
-                image = R.drawable.transfer_pesawat,
-                menuName = "Transfer"
+            PromotionModel(
+                imagePromotion = R.drawable.promobcas2
             ),
-            MenuDashboardModel(
-                image = R.drawable.pembelian_cart,
-                menuName = "Pembelian"
+            PromotionModel(
+                imagePromotion = R.drawable.promobcas
             ),
-            MenuDashboardModel(
-                image = R.drawable.pembayaran_card,
-                menuName = "Pembayaran"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.cardless,
-                menuName = "Cardless"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.history_transaction,
-                menuName = "History Transaksi"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.mutasi_rekening,
-                menuName = "Mutasi Rekening"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.jadwal_shalat,
-                menuName = "Jadwal Shalat"
+            PromotionModel(
+                imagePromotion = R.drawable.promobcas3
             ),
         )
     }
 
-    private fun populateDataAccNumber() :List<AccountNumberModel> {
-        return listOf(
-            AccountNumberModel(
-                savingType = "Tahapan Wadi'ah Non Bonus",
-                noRek = 1223334444,
-                balanceAmount = "Rp.100.000.000"
-            ),
-            AccountNumberModel(
-                savingType = "Tahapan Wadi'ah Bonus",
-                noRek = 1223334444,
-                balanceAmount = "Rp.200.000.000"
-            ),
-            AccountNumberModel(
-                savingType = "Tahapan Wadi'ah Bonus",
-                noRek = 1223334444,
-                balanceAmount = "Rp.300.000.000"
-            ),
-        )
-    }
 
 }
